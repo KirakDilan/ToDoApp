@@ -5,4 +5,6 @@ Unsere Webseite bestimmt aus 4 Bereichen: Login, Profil, ToDos und Impressum.
 ***
 
 # Html
+Wir haben in die HTML-Datei unser Design eingefügt, da sich die CSS nicht mit der HTML verknüpft hat
+***
 
