@@ -299,7 +299,6 @@ Diese HTML-Datei ist die erste Seite die erscheint, wenn man die Seite öffnet. 
 * Index Webseite
 Nachdem man sich eingeloggt hat, erscheint als nächte seite die Home-Seite. Auf der Home-Seite haben wir unsere Vorteile aufgelistet. 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -430,7 +429,6 @@ Nachdem man sich eingeloggt hat, erscheint als nächte seite die Home-Seite. Auf
 * Profil Webseite
 Auf der Profil-Seite hat der User die Möglichkeit seine Nutzernamen, E-Mail und Geburtdatum zu unterlegen. Ebenfalls haben wir dort einen Überblick über die Anzahl von ToDos. 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -560,7 +558,6 @@ Auf der Profil-Seite hat der User die Möglichkeit seine Nutzernamen, E-Mail und
 ******************************************
 * ToDos Webseite
 In dieser HTML-Datei haben wir den ToDo-Bereich. Wir haben die Möglichkeit ToDos einzufügen, zu löschen und zu updaten. 
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -715,7 +712,6 @@ In dieser HTML-Datei haben wir den ToDo-Bereich. Wir haben die Möglichkeit ToDo
 
 ******************************************
 * Impressum Webseite
-
 Die HTML-Datei verfügt zusätzlich noch über eine main-content-container, welchen wir mit unseren Daten füllten.
 
 <!DOCTYPE html>
