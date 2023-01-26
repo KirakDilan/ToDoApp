@@ -85,8 +85,7 @@ def todo():
 
 
 ******************************************************************
-* In der Methode haben wir als Default-Wert "POST". Hier haben wir den Add-Bereich, welches dem User 
-* die Möglichkeit gibt ein neues ToDo einzufügen, zu updateten und zu löschen. 
+* In der Methode haben wir als Default-Wert "POST". Hier haben wir den Add-Bereich, welches dem User die Möglichkeit gibt ein neues ToDo einzufügen, zu updateten und zu löschen. 
 
 
 @app.route("/add", methods=["POST"])
