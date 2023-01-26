@@ -148,12 +148,721 @@ if __name__ == "__main__":
 
 Die HTML-Dateien befinden sich in einem seperaten Ordner namens templates. Ursprünglich hatten wir
 die CSS-Datei ebenfalls in einem seperaten Ordner, doch aufgrund einiger Komplikation haben wir 
-uns dazu entschieden die CSS in HTMl einzubinden. 
-Wir haben uns für ein schlichtes Design mit unterschiedlichen Blautöne entschieden. 
+uns dazu entschieden die CSS in die HTMl einzubinden. 
+Wir haben uns für ein schlichtes Design mit unterschiedlichen Blautöne entschieden. Unter anderem befindet sich auf der Webseite ein "navigation-container", mit dessen Hilfe wir auf die unterschiedlichen Seiten gelangen können. 
+Die unterschiedlichen HTML-Seiten ähneln sich vom Aufbau, um ein schönes Gesamtbild zu erzeugen. Sie unterscheiden sich dennoch in gewissen punkten. 
 
 ******************************************
+* SignIn Webseite
+Diese HTML-Datei ist die erste Seite die erscheint, wenn man die Seite öffnet. Hierbei handelt es sich um die Login-Seite. Sie fügt über die Klasse "form-group", in der man seine E-Mail und Passwort eingeben kann.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        body {margin: 0;
+        }
+        a{text-decoration: rgb(9, 15, 98);
+        }
+        .company-name-container{
+        background-color: #142d7a;
+        min-height: 200px;
+        padding: 30px 20px 5px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-nav-container{
+        background-color: #8eaaf5;
+        padding: 0em 0em 1em;
+    }
+    .main-content-container{
+        background-color: #c0d0f9;
+        min-height: 500px;
+        list-style: none;
+    }
+    .field{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        color: #101c41;
+    }
+    .main-content-container{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-content-container li{
+        color: rgb(23, 30, 78);
+        font-size: large;
+        column-count: 3;
+        column-gap: 10em;
+        text-align: justify;
+        color: #141b1b;
+        padding: 1em 2em 2em;
+    }
+    .main-footer-container{
+        background-color: #142d7a;
+        min-height: 100px;
+        margin-top: 10px;
+    }
+    .main-nav-container ul{
+        margin: 0;
+        list-style-type: none;
+        font-size: small;
+    }
+    .main-nav-container a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .main-nav>li{
+        display:inline-block;
+        position: relative;
+        color: #1b316a; 
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        font-weight: 600; 
+        font-size: 1.7em;
+        padding: 0.5em 6em 0;
+    }
+    .dropdown-nav{
+        display: none;
+        position: absolute;
+        background-color: #a1b3ee;
+        width: 100%;
+    }
+    .dropdown-nav>li{
+        padding: 0.5em 1em;   
+    }
+    .main-nav>li>a:hover{
+        color: #161948;
+    }
+    .dropdown-nav>li:hover{
+        background-color: #b6c7fb;
+        padding: 0.6em 1em;
+        font-size: large;
+    }
+    .main-nav>li:hover .dropdown-nav{
+        display: block;
+        font-size: medium;
+        padding: 0em 0em;    
+    }  
+     </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTime</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="page-container">
+        <header class="company-name-container"><font size="7" color="#D6FFFE">MeTime</font><br>
+            <font size="6" color="#D6FFFE">Sign In</font></header>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ToDos.html">ToDos</a></li>
+                <li>Account
+                    <ul class="dropdown-nav">
+                        <li><a href="SignIn.html">Sign In</a></li>
+                        <li><a href="Profil.html">Profil</a></li>
+                    </ul>
+                </li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <main class="main-content-container"><div class="row"  >
+            <div class="col-sm-6">
+                <form method="POST">
+                    <div class="form-group">
+                      <label for="email">Username : </label>
+                      <input type="text" name="uname" class="form-control" id="uname">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Password : </label>
+                      <input type="password" name="passw" class="form-control" id="passw">
+                    </div>
+                    <button type="submit" class="btn form-control btn-default">Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
+        <footer class="main-footer-container"></footer>
+    
+</body>
+</html>
+
+******************************************
+* Index Webseite
+Nachdem man sich eingeloggt hat, erscheint als nächte seite die Home-Seite. Auf der Home-Seite haben wir unsere Vorteile aufgelistet. 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {margin: 0;
+        }
+        a{text-decoration: rgb(9, 15, 98);
+        }
+        .company-name-container{
+        background-color: #142d7a;
+        min-height: 200px;
+        padding: 30px 20px 5px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-nav-container{
+        background-color: #8eaaf5;
+        padding: 0em 0em 1em;
+    }
+    .main-content-container{
+        background-color: #c0d0f9;
+        min-height: 500px;
+        list-style: none;
+    }
+    .field{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        color: #101c41;
+    }
+    .main-content-container{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-content-container li{
+        color: rgb(23, 30, 78);
+        font-size: large;
+        column-count: 3;
+        column-gap: 10em;
+        text-align: justify;
+        color: #141b1b;
+        padding: 1em 2em 2em;
+    }
+    .main-footer-container{
+        background-color: #142d7a;
+        min-height: 100px;
+        margin-top: 10px;
+    }
+    .main-nav-container ul{
+        margin: 0;
+        list-style-type: none;
+        font-size: small;
+    }
+    .main-nav-container a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .main-nav>li{
+        display:inline-block;
+        position: relative;
+        color: #1b316a; 
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        font-weight: 600; 
+        font-size: 1.7em;
+        padding: 0.5em 6em 0;
+    }
+    .dropdown-nav{
+        display: none;
+        position: absolute;
+        background-color: #a1b3ee;
+        width: 100%;
+    }
+    .dropdown-nav>li{
+        padding: 0.5em 1em;   
+    }
+    .main-nav>li>a:hover{
+        color: #161948;
+    }
+    .dropdown-nav>li:hover{
+        background-color: #b6c7fb;
+        padding: 0.6em 1em;
+        font-size: large;
+    }
+    .main-nav>li:hover .dropdown-nav{
+        display: block;
+        font-size: medium;
+        padding: 0em 0em;    
+    }  
+     </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTime</title>
+</head>
+<body>
+
+        <header class="company-name-container"><font size="7" color="#D6FFFE">MeTime</font><br>
+            <font size="6" color="#D6FFFE">Home</font></header>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ToDos.html">ToDos</a></li>
+                <li>Account
+                    <ul class="dropdown-nav">
+                        <li><a href="SignIn.html">Sign In</a></li>
+                        <li><a href="Profil.html">Profil</a></li>
+                    </ul></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <main class="main-content-container">
+            <div align="middle"><font size="5" color="#101c41" face="Times New Roman">
+            <br>Mehr als nur das Abhaken der täglichen Aufgaben !<br>
+            
+            -	Planen Sie Ihren Tag von überall <br><br>
+            -	Verpassen Sie nie wieder eine Frist<br><br>
+            -	Behalten Sie den Überblick<br></font>
+            <br><img src="https://stadt-bremerhaven.de/wp-content/uploads/2018/08/microsoft-to-do-logo.jpg" 
+            height="250" width="450" alt="Bild kann nicht geladen werden." border="3" align="center" ></div>
+        </main>
+        
+        <footer class="main-footer-container"></footer>
+</body>
+</html>
+
+******************************************
+* Profil Webseite
+Auf der Profil-Seite hat der User die Möglichkeit seine Nutzernamen, E-Mail und Geburtdatum zu unterlegen. Ebenfalls haben wir dort einen Überblick über die Anzahl von ToDos. 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {margin: 0;
+        }
+        a{text-decoration: rgb(9, 15, 98);
+        }
+        .company-name-container{
+        background-color: #142d7a;
+        min-height: 200px;
+        padding: 30px 20px 5px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-nav-container{
+        background-color: #8eaaf5;
+        padding: 0em 0em 1em;
+    }
+    .main-content-container{
+        background-color: #c0d0f9;
+        min-height: 500px;
+        list-style: none;
+    }
+    .field{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        color: #101c41;
+    }
+    .main-content-container{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-content-container li{
+        color: rgb(23, 30, 78);
+        font-size: large;
+        column-count: 3;
+        column-gap: 10em;
+        text-align: justify;
+        color: #141b1b;
+        padding: 1em 2em 2em;
+    }
+    .main-footer-container{
+        background-color: #142d7a;
+        min-height: 100px;
+        margin-top: 10px;
+    }
+    .main-nav-container ul{
+        margin: 0;
+        list-style-type: none;
+        font-size: small;
+    }
+    .main-nav-container a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .main-nav>li{
+        display:inline-block;
+        position: relative;
+        color: #1b316a; 
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        font-weight: 600; 
+        font-size: 1.7em;
+        padding: 0.5em 6em 0;
+    }
+    .dropdown-nav{
+        display: none;
+        position: absolute;
+        background-color: #a1b3ee;
+        width: 100%;
+    }
+    .dropdown-nav>li{
+        padding: 0.5em 1em;   
+    }
+    .main-nav>li>a:hover{
+        color: #161948;
+    }
+    .dropdown-nav>li:hover{
+        background-color: #b6c7fb;
+        padding: 0.6em 1em;
+        font-size: large;
+    }
+    .main-nav>li:hover .dropdown-nav{
+        display: block;
+        font-size: medium;
+        padding: 0em 0em;    
+    }  
+     </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTime</title>
+</head>
+<body>
+    <div class="page-container">
+        <header class="company-name-container"><font size="7" color="#D6FFFE">MeTime</font><br>
+            <font size="6" color="#D6FFFE">Profil</font></header>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ToDos.html">ToDos</a></li>
+                <li>Account
+                    <ul class="dropdown-nav">
+                        <li><a href="SignIn.html">Sign In</a></li>
+                        <li><a href="Profil.html">Profil</a></li>
+                    </ul>
+                </li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <main class="main-content-container">
+            <div align="middle"><font size="5" color="#101c41" face="Times New Roman">
+            <br>Nutzername<br>
+            <br>
+            	E-mail <br><br>
+            	Geburtsdatum<br><br>
+            	Anzahl an ToDos<br></font>
+               <br> <img src="https://tibatu.com/wp-content/uploads/2020/10/flat-business-man-user-profile-avatar-icon-vector-4333097.jpg"
+                 height="200" width="200" alt="Bild kann nicht geladen werden." border="3" align="center"></div></main>
+        <footer class="main-footer-container"></footer>
+    </div>
+</body>
+</html>
+
+******************************************
+* ToDos Webseite
+In dieser HTML-Datei haben wir den ToDo-Bereich. Wir haben die Möglichkeit ToDos einzufügen, zu löschen und zu updaten. 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {margin: 0;
+    }
+    a{text-decoration: rgb(9, 15, 98);
+    }
+    .company-name-container{
+    background-color: #142d7a;
+    min-height: 200px;
+    padding: 30px 20px 5px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+}
+.main-nav-container{
+    background-color: #8eaaf5;
+    padding: 0em 0em 1em;
+}
+.main-content-container{
+    background-color: #c0d0f9;
+    min-height: 500px;
+    list-style: none;
+}
+.field{
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    color: #101c41;
+}
+.main-content-container{
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+}
+.main-content-container li{
+    color: rgb(23, 30, 78);
+    font-size: large;
+    column-count: 3;
+    column-gap: 10em;
+    text-align: justify;
+    color: #141b1b;
+    padding: 1em 2em 2em;
+}
+.main-footer-container{
+    background-color: #142d7a;
+    min-height: 100px;
+    margin-top: 10px;
+}
+.main-nav-container ul{
+    margin: 0;
+    list-style-type: none;
+    font-size: small;
+}
+.main-nav-container a{
+    color: inherit;
+    text-decoration: none;
+}
+.main-nav>li{
+    display:inline-block;
+    position: relative;
+    color: #1b316a; 
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    font-weight: 600; 
+    font-size: 1.7em;
+    padding: 0.5em 6em 0;
+}
+.dropdown-nav{
+    display: none;
+    position: absolute;
+    background-color: #a1b3ee;
+    width: 100%;
+}
+.dropdown-nav>li{
+    padding: 0.5em 1em;   
+}
+.main-nav>li>a:hover{
+    color: #161948;
+}
+.dropdown-nav>li:hover{
+    background-color: #b6c7fb;
+    padding: 0.6em 1em;
+    font-size: large;
+}
+.main-nav>li:hover .dropdown-nav{
+    display: block;
+    font-size: medium;
+    padding: 0em 0em;    
+}  
+ </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTime</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<body>
+    <div class="page-container">
+        <header class="company-name-container"><font size="7" color="#D6FFFE">MeTime</font><br>
+            <br>
+            <font size="6" color="#D6FFFE">ToDos</font></header>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ToDos.html">ToDos</a></li>
+                <li>Account
+                    <ul class="dropdown-nav">
+                        <li><a href="SignIn.html">Sign In</a></li>
+                        <li><a href="Profil.html">Profil</a></li>
+                    </ul></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content-container">
+            <div style="margin-top:  0px;" class="ui container"><br>
+                <p align="center"><font size="6" color="#101c41" face="Times New Roman">My ToDos</font><br></p>
+                
+
+            <form class="ui form" action="/add" method="post">
+                <div class="field">
+                    <label>Todo Title</label>
+                    <input type="text" name="title" placeholder="Enter Todo..."><br>
+                </div>
+                <button class="ui purple button" type="submit">Add</button>
+            </form>
+            <hr>
+
+        {% for todo in todo_list %}
+        <div class="ui segment">
+            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
+
+            {% if todo.complete == False %}
+            <span class="ui gray label">Not Complete</span>
+            {% else %}
+            <span class="ui green label">Completed</span>
+            {% endif %}
+
+            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
+            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
+        </div>
+        {% endfor %}
+   
+        </div>
+    </main>
+        <footer class="main-footer-container"></footer>
+    </div>
+</body>
+</html>
+
+******************************************
+* Impressum Webseite
+
+Die HTML-Datei verfügt zusätzlich noch über eine main-content-container, welchen wir mit unseren Daten füllten.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {margin: 0;
+        }
+        a{text-decoration: rgb(9, 15, 98);
+        }
+        .company-name-container{
+        background-color: #142d7a;
+        min-height: 200px;
+        padding: 30px 20px 5px;
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-nav-container{
+        background-color: #8eaaf5;
+        padding: 0em 0em 1em;
+    }
+    .main-content-container{
+        background-color: #c0d0f9;
+        min-height: 500px;
+        list-style: none;
+    }
+    .field{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        color: #101c41;
+    }
+    .main-content-container{
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    .main-content-container li{
+        color: rgb(23, 30, 78);
+        font-size: large;
+        column-count: 3;
+        column-gap: 10em;
+        text-align: justify;
+        color: #141b1b;
+        padding: 1em 2em 2em;
+    }
+    .main-footer-container{
+        background-color: #142d7a;
+        min-height: 100px;
+        margin-top: 10px;
+    }
+    .main-nav-container ul{
+        margin: 0;
+        list-style-type: none;
+        font-size: small;
+    }
+    .main-nav-container a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .main-nav>li{
+        display:inline-block;
+        position: relative;
+        color: #1b316a; 
+        font-family:'Times New Roman', Times, serif;
+        font-size: large;
+        font-weight: 600; 
+        font-size: 1.7em;
+        padding: 0.5em 6em 0;
+    }
+    .dropdown-nav{
+        display: none;
+        position: absolute;
+        background-color: #a1b3ee;
+        width: 100%;
+    }
+    .dropdown-nav>li{
+        padding: 0.5em 1em;   
+    }
+    .main-nav>li>a:hover{
+        color: #161948;
+    }
+    .dropdown-nav>li:hover{
+        background-color: #b6c7fb;
+        padding: 0.6em 1em;
+        font-size: large;
+    }
+    .main-nav>li:hover .dropdown-nav{
+        display: block;
+        font-size: medium;
+        padding: 0em 0em;    
+    }  
+     </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeTime</title>
+</head>
+<body>
+    <div class="page-container">
+        <header class="company-name-container"><font size="7" color="#D6FFFE">MeTime</font><br>
+            <font size="6" color="#D6FFFE">Impressum</font></header>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ToDos.html">ToDos</a></li>
+                <li>Account
+                    <ul class="dropdown-nav">
+                        <li><a href="SignIn.html">Sign In</a></li>
+                        <li><a href="Profil.html">Profil</a></li>
+                    </ul>
+                </li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
+        </nav>
+        <main class="main-content-container">
+            <div style="margin-top: 0px;" class="ui container"><br>
+                <p align="center"><font size="6" color="#101c41" face="Times New Roman">MeTime Studio NDC</font><br></p>
+        
+        <main class="main-content-container"><li><p color="#101c41"> 
+            <br>Natasza Aleksandra Kopka<br>
+                Haselhorst 23<br>
+                Berlin 13583<br>
+                Tel.:017680714194<br>
+                s_kopka21@stud.hwr-berlin.de<br>
+            <br>
+            <br>Dilan Kirak<br>
+                Spekteweg 51<br>
+                Berlin 13583<br>
+                Tel.:017630770562<br>
+                s_kirak22@stud.hwr-berlin.de<br>
+            <br>
+            <br>Christina Eduardo Maria Kademba<br>
+                Haselhorst 12<br>
+                Berlin 13583<br>
+                Tel.:017643869820<br>
+                s_kademba21@stud.hwr-berlin.de<br>
+        </p></li>
+        </main>
+                
+    </div>
+ </main>
+        <footer class="main-footer-container"></footer>
+    </div>
+</body>
+</html>
 
 
 
