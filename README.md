@@ -96,7 +96,6 @@ def add():
     db.session.commit()
     return redirect(url_for("todo"))
 
-#Todos updaten
 @app.route("/update/<int:todo_id>")
 def update(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
@@ -104,7 +103,6 @@ def update(todo_id):
     db.session.commit()
     return redirect(url_for("todo"))
 
-#Todos löschen
 @app.route("/delete/<int:todo_id>")
 def delete(todo_id):
     todo = Todo.query.filter_by(id=todo_id).first()
