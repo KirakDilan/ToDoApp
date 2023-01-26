@@ -8,23 +8,21 @@ from flask_sqlalchemy import SQLAlchemy // Diese Zeilen muss ganz am Anfang des 
  * Martikelnummer:    77211925676                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
  * @author Dilan	            	                         *
-                                                        
+ *                                             
 * Vorname , Nachname:   Natasza Alexandra Kopka              * 
  * Studiengang: Wirtschaftsinformatik                        * 
  * Martikelnummer:    77211880478                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
  * @author Natazca	            	                         *
-                                                        
+ *                                             
 * Vorname , Nachname:   Christina Eduardo Maria Kademba      * 
  * Studiengang: Wirtschaftsinformatik                        * 
  * Martikelnummer:     7721188143                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
  * @author Christina	            	     
 
- ************************************************************* */
+ *************************************************************
 
-
-/ *********************************************************
 * THEMA
 Hierbei handelt es sich um eine Webseite einer ToDo-Liste. Beim Öffnen der Webseite sieht man als erstes die Loginseite. Der Benutzer kann sich hier einloggen und somit ein eigenes Profil erstellen. Auf dieser Profilseite hat der Nutzer die Möglichkeit einen Nutzernamen, E-Mail & Geburtsdatum zu hinterlegen. Ebenfalls hat man ein Überblick über die Anzahl von ToDos. Nach der Anmeldung wird man auf die Home-Seite weitergeleitet. In diesem Bereiche haben wir unsere Vorteile aufgelistet. 
 Auf der ToDo-Seite hat man die Möglichkeit ToDo's einzufügen, upzudaten und zu löschen. Der Nutzer trägt seine ToDo in das Textfeld ein und drückt auf "Add", dann wird diese ToDo in die Liste aufgenommen. Sobald diese Aufgabe erledigt ist, drückt der Nutzer auf "Ubdate" und die Aufgabe wird als "completed" makiert. Durch das drücken von "Delete" wird die Aufgabe aus die Liste gestrichen. 
