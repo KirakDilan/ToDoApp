@@ -8,27 +8,29 @@ from flask_sqlalchemy import SQLAlchemy // Diese Zeilen muss ganz am Anfang des 
  * Martikelnummer:    77211925676                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
  * @author Dilan	            	                         *
- *                                                           *
+                                                        
 * Vorname , Nachname:   Natasza Alexandra Kopka              * 
  * Studiengang: Wirtschaftsinformatik                        * 
  * Martikelnummer:    77211880478                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
  * @author Natazca	            	                         *
- *                                                           *
+                                                        
 * Vorname , Nachname:   Christina Eduardo Maria Kademba      * 
  * Studiengang: Wirtschaftsinformatik                        * 
  * Martikelnummer:     7721188143                            * 
  * Ort: HWR- Hochschule für Wirtschaft und Recht             *
- * @author Christina	            	                     *
+ * @author Christina	            	     
+
  ************************************************************* */
 
-/*******************************************************************************************************************************************
+
+/ *********************************************************
 * THEMA
 Hierbei handelt es sich um eine Webseite einer ToDo-Liste. Beim Öffnen der Webseite sieht man als erstes die Loginseite. Der Benutzer kann sich hier einloggen und somit ein eigenes Profil erstellen. Auf dieser Profilseite hat der Nutzer die Möglichkeit einen Nutzernamen, E-Mail & Geburtsdatum zu hinterlegen. Ebenfalls hat man ein Überblick über die Anzahl von ToDos. Nach der Anmeldung wird man auf die Home-Seite weitergeleitet. In diesem Bereiche haben wir unsere Vorteile aufgelistet. 
 Auf der ToDo-Seite hat man die Möglichkeit ToDo's einzufügen, upzudaten und zu löschen. Der Nutzer trägt seine ToDo in das Textfeld ein und drückt auf "Add", dann wird diese ToDo in die Liste aufgenommen. Sobald diese Aufgabe erledigt ist, drückt der Nutzer auf "Ubdate" und die Aufgabe wird als "completed" makiert. Durch das drücken von "Delete" wird die Aufgabe aus die Liste gestrichen. 
 Zu guter letzt haben wir noch einen Impressum-Bereich mit unseren Angaben. 
 
-****************************************************************************************************************************************** */
+************************************************************ */
 
 app = Flask(__name__)
 
@@ -41,29 +43,19 @@ app.config['SECRET_KEY'] = 'secretkey'
 db = SQLAlchemy(app)
 //....
 
-/**
-*   ****************************************************************
+/******************************************************************
 * In der Prozedur haben wir eine Klasse, welche dem User eine Login-Basis zu Verfügung stellt. 
-* 
-* ****************************************************************** */
 
-#Login
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False, unique=True)#kann nicht leer sein
     password = db.Column(db.String(80), nullable=False)#kann nicht leer sein
 
-
-
-#Erste Seite die sich öffnet 
 @app.route("/")
 def home():
     return render_template("SignIn.html")
-//koordiniert Sie beim Starten der Webseite auf die SignIn.html
 
-//koordiniert Sie auf die Index.html
-
-#Login Methode
 @app.route("/SignIn",methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -75,33 +67,11 @@ def login():
             return redirect(url_for("index"))
         return render_template("index.html", login=login)
 
-#Login Seite
-@app.route("/SignIn.html",methods=["GET", "POST"])
-def signin():
-    return render_template("/SignIn.html")
+
+****************************************************************
+* In der Prozedur haben wir eine Klasse, welche dem User eine ToDo-Basis zu Verfügung stellt. Hier haben wir die ID als Integer, den Title als String und die "Complete" als Boolean.  
 
 
-#Startseite
-@app.route("/index.html")
-def index():
-    return render_template("index.html")
-    //koordiniert Sie auf die Index.html
-
-#Profil Seite
-@app.route("/Profil.html")
-def profil():
-    return render_template("/Profil.html")
-    //koordiniert Sie auf die Profil.html
-
-
-/**
-*   ****************************************************************
-* In der Prozedur haben wir eine Klasse, welche dem User eine ToDo-Basis zu Verfügung 
-* stellt. Hier haben wir die Id als Integer, den Title als String und die "Complete" als Boolean.  
-* 
-* ****************************************************************** */
-
-#Todos
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
@@ -115,15 +85,11 @@ def todo():
     //koordiniert Sie auf die ToDos.html
 
 
-/**
-*   ****************************************************************
+/******************************************************************
 * In der Methode haben wir als Default-Wert "POST". Hier haben wir den Add-Bereich, welches dem User 
 * die Möglichkeit gibt ein neues ToDo einzufügen, zu updateten und zu löschen. 
-* 
-* ****************************************************************** */
 
 
-#Neue todos hinzufügen
 @app.route("/add", methods=["POST"])
 def add():
     title = request.form.get("title")
@@ -148,11 +114,27 @@ def delete(todo_id):
     db.session.commit()
     return redirect(url_for("todo"))
 
-#Impressum Seite
+/******************************************************************
+*  In diesem Abschnitt haben wir unterschiedliche Hilfsmethoden, welche uns bei der Navigierung unterstützen. 
+
+
 @app.route("/impressum.html")
 def impressum():
     return render_template("/impressum.html")
-    //koordiniert Sie auf die impressum.html
+
+@app.route("/SignIn.html",methods=["GET", "POST"])
+def signin():
+    return render_template("/SignIn.html")
+
+
+@app.route("/index.html")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/Profil.html")
+def profil():
+    return render_template("/Profil.html")
 
 /**
 *   ****************************************************************
