@@ -43,7 +43,7 @@ db = SQLAlchemy(app)
 
 
 ******************************************************************
-* In der Prozedur haben wir eine Klasse, welche dem User eine Login-Basis zu Verfügung stellt. 
+* In der Prozedur haben wir eine Klasse, welche dem User eine Login-Basis zu Verfügung stellt. Es ist Möglich unsere Daten einzugeben, doch bedauerlicherweise kann man sich nicht einloggen. Sobald man auf den "Sign In" Button drückt, erscheint nicht die "index.html".
 
 
 class User(db.Model):
